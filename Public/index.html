@@ -1,70 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Publicaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/1741230/pexels-photo-1741230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: 'Otomanopee One', sans-serif;
+        }
 
+        .card {
+            margin-top: 30px;
+            width: 60%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-<meta charset="utf-8">
-	<title>App publicaciones</title>
-  <style>
-    .card{
-margin-top: 3px;
-width: 60%;
+        textarea {
+            resize: none;
+        }
 
+        #preview {
+            text-align: center;
+            margin-top: 10px;
+        }
 
+        .btn-primary {
+            background-color: #343a40; /* Cambia el color de fondo del botón principal */
+            border-color: #343a40; /* Cambia el color del borde del botón principal */
+        }
 
-    }textarea{
+        .btn-primary:hover {
+            background-color: #292e33; /* Cambia el color de fondo al pasar el ratón por encima del botón principal */
+            border-color: #292e33; /* Cambia el color del borde al pasar el ratón por encima del botón principal */
+        }
 
-resize: none;
-    }body {
-  background-image: url(https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
-}
+        .btn-info {
+            background-color: #17a2b8; /* Cambia el color de fondo del botón "Ver historias" */
+            border-color: #17a2b8; /* Cambia el color del borde del botón "Ver historias" */
+        }
 
+        .btn-info:hover {
+            background-color: #117a8b; /* Cambia el color de fondo al pasar el ratón por encima del botón "Ver historias" */
+            border-color: #117a8b; /* Cambia el color del borde al pasar el ratón por encima del botón "Ver historias" */
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Publicaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/1741230/pexels-photo-1741230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: 'Otomanopee One', sans-serif;
+        }
+
+        .card {
+            margin-top: 30px;
+            width: 60%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        #preview {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: #343a40; /* Cambia el color de fondo del botón principal */
+            border-color: #343a40; /* Cambia el color del borde del botón principal */
+        }
+
+        .btn-primary:hover {
+            background-color: #292e33; /* Cambia el color de fondo al pasar el ratón por encima del botón principal */
+            border-color: #292e33; /* Cambia el color del borde al pasar el ratón por encima del botón principal */
+        }
+
+        .btn-info {
+            background-color: #343a40; /* Cambia el color de fondo del botón "Ver historias" para que sea igual que el botón "Publicar" */
+            border-color: #343a40; /* Cambia el color del borde del botón "Ver historias" para que sea igual que el botón "Publicar" */
+            color: #ffffff; /* Cambia el color del texto del botón "Ver historias" a blanco */
+        }
+
+        .btn-info:hover {
+            background-color: #292e33; /* Cambia el color de fondo al pasar el ratón por encima del botón "Ver historias" */
+            border-color: #292e33; /* Cambia el color del borde al pasar el ratón por encima del botón "Ver historias" */
+        }
     </style>
 </head>
+
 <body>
 
-    <div class="card mx-auto" >
-        <div class="card-Header mx-auto">
-            Publica tu historia
-          </div>
+    <div class="card">
+        <h2 class="text-center">Publica tu historia</h2>
         <form>
-            <div class="mb-3 ">
-        <label>Nombre del usuario</label>
-        <input type="text" id="usuario" class="form-control">
-         </div>
-         <div class="mb-3">
-            <label>Descripcion</label>
-            <textarea type="text" id="Descripcion" class="form-control" rows="5"></textarea> 
             <div class="mb-3">
-                <label>Subir Foto</label>
+                <label for="usuario" class="form-label">Nombre del usuario</label>
+                <input type="text" id="usuario" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="Descripcion" class="form-label">Descripción</label>
+                <textarea id="Descripcion" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Subir Foto</label>
                 <input type="file" id="file" class="form-control" accept=".jpg, .png, .gif">
-                 </div>
-                 <div class="mb-3 text-center" id="preview">
-
-                 </div>
-                 <div class="mb-3">
-                  <button class="form-control btn btn-primary" type="button" id="Publicar">Publicar</button>
-
-                 </div>
-                 <div class="mb-3">
-                    <button class="form-control btn btn-info" type="button" id="verhistorias" onclick="location.href='publicaciones.html'">Ver historias</button>
-  
-                   </div>
-
-
-
+            </div>
+            <div class="mb-3 text-center" id="preview">
+                <!-- Aquí se mostrará la vista previa de la imagen -->
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary btn-block" type="button" id="Publicar">Publicar</button>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info btn-block" type="button" id="verhistorias"
+                    onclick="location.href='publicaciones.html'">Ver historias</button>
+            </div>
         </form>
     </div>
 
-<script type="text/javascript" src="index.js"></script>
-
-
-
+    <script type="text/javascript" src="index.js"></script>
 
 </body>
+
 </html>

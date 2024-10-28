@@ -3,72 +3,119 @@
 <head>
     <meta charset="utf-8">
     <title>historias</title>
-     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" >
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
-<style>
-#fade{
-    background-image: url(https://images.pexels.com/photos/7078382/pexels-photo-7078382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-background-size: cover;
-background-position: 1cm
-}.root{
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <style>
+        #fade {
+            background-color: #343a40;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    display: none;
-}body{
+        .card {
+            width: 900px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #343a40;
+            text-align: center;
+            transition: transform 0.2s;
+            margin-bottom: 20px;
+        }
 
-}div{
+        .card:hover {
+            transform: scale(1);
+        }
 
+        #hola {
+            font-family: 'Teko', sans-serif;
+            color: #343a40;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-background-size: cover;
-}#hola{
-    font-family: 'Teko', sans-serif;
+        .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+            color: #ffffff;
+            transition: background-color 0.2s;
+        }
 
+        .btn-primary:hover {
+            background-color: #292e33;
+            border-color: #292e33;
+        }
 
-}.card{
+        /* Estilo para las publicaciones */
+        .publicacion-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-width: 900px;
+        .publicacion-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
 
-}
+        /* Eliminar la línea de abajo */
+        .publicacion-card:last-child {
+            margin-bottom: 0;
+        }
 
+        /* Estilo para usuario, descripción e imagen */
+        .usuario {
+            font-weight: bold;
+        }
 
-
-
-
-
-
-</style>
-
-
-
-
-
+        .descripcion {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
-<body id="fade" style="mx" >
-<div class=" card mx-auto mt-5">
-    <h1 class="mx-auto bs-light" id="hola" style=>Publicaciones</h1>
-    <a href="index.html" class="mx-auto">Publicar un nuevo post</a>
-<div class=" card-body mx-auto" id="publicaciones">
+<body id="fade">
+    <div class="card mx-auto">
+        <h1 class="text-center bs-light" id="hola">Publicaciones</h1>
+        <a href="index.html" class="mx-auto btn btn-primary btn-block">Publicar un nuevo post</a>
+        <div class="card-body mx-auto" id="publicaciones">
+            <!-- Contenido de las publicaciones aquí -->
+         
+              
+            </div>
+            <div class="publicacion-card">
+            
+              
+            </div>
+            <!-- Agrega más publicaciones aquí -->
+        </div>
+    </div>
 
-
-</div>
-
-<script type="text/javascript" src="publicaciones.js" ></script>
-<script>
-$(document).ready(function(){
-    
-    $("#fade").fadeIn(2000)
-  });
-
-
-</script>
+    <script type="text/javascript" src="publicaciones.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#fade").fadeIn(2000);
+        });
+    </script>
 </body>
 </html>
+
+
+

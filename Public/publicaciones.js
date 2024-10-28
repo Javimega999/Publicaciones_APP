@@ -1,30 +1,30 @@
-async function getData (){
-    const response = await fetch("/publicaciones")
+async function getData() {
+    const response = await fetch("/publicaciones");
     const datos = await response.json();
     console.log(datos);
 
-for(let i = 0; i < datos.length; i++){
-//contenedor principal para alojar al post
-const  root = document.createElement("div")
-const   usuario = document.createElement("div")
-const Descripcion = document.createElement("div")
-const fecha = document.createElement("div")
-const imagen = document.createElement("img")
-const linea = document.createElement("hr") 
-// creamos las etiquetas los datos que queremos mostrar 
-usuario.innerHTML ="Usuario:" + datos[i].usuario;
-Descripcion.innerHTML ="Descripcion:" + datos[i].Descripcion;
-const fechaOk = new Date(datos[i].Date).toLocaleDateString();
-Date.innerHTML ="Fecha publicacion:" + fechaOk;
-imagen.src = datos[i].base64;
-imagen.style ="width: 400px;"
+    for (let i = 0; i < datos.length; i++) {
+        const root = document.createElement("div");
+        root.classList.add("publicacion-card");
 
-// hemos llamado al root en el orden que queremos 
+        const imagen = document.createElement("img");
+        imagen.classList.add("publicacion-imagen");
+        imagen.src = datos[i].base64;
 
-root.append(imagen, usuario, Descripcion, fecha, linea)
-document.getElementById("publicaciones").append(root)
+        const usuario = document.createElement("div");
+        usuario.classList.add("publicacion-usuario");
+        usuario.textContent = "Usuario: " + datos[i].usuario;
+
+        const Descripcion = document.createElement("div");
+        Descripcion.classList.add("publicacion-descripcion");
+        Descripcion.textContent = "Descripción: " + datos[i].Descripcion;
+
+        const linea = document.createElement("hr");
+
+        root.append(imagen, usuario, Descripcion, linea);
+
+        document.getElementById("publicaciones").append(root);
+    }
 }
 
-
-}
-getData()
+getData();

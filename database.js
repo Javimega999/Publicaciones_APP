@@ -1,7 +1,7 @@
 const  mongoose =require("mongoose")
 
-
-const  mongodb_url ="mongodb+srv://javier:SoRS69mdIJzHujsi@clusterapppublicaciones.79pvh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+// Sustituir por tu mongo url
+const  mongodb_url =""
 
 
 mongoose.connect(mongodb_url,{
