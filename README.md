@@ -12,7 +12,10 @@
 - 🟢 **JavaScript** - Lenguaje de programación principal.
 - 🟡 **Node.js** - Entorno de ejecución en el servidor.
 - 🔵 **MongoDB** - Base de datos NoSQL.
+- 🟠 **Express.js** - Framework para manejar el backend.
 - 🟣 **HTML y CSS** - Diseño de la interfaz sin frameworks adicionales.
+
+
 
 ## 📦 Instalación
 
@@ -39,6 +42,7 @@
 
 ✅ Publicación de contenido en tiempo real.
 ✅ Interfaz moderna con HTML, CSS y JavaScript.
+✅ Backend con Express.js y Node.js.
 ✅ Base de datos NoSQL con MongoDB.
 
 ## 🚀 Contribuciones
